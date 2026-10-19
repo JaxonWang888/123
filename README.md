@@ -1,28 +1,25 @@
-# 鞍座图纸生成器 V6
+# 鞍座图纸生成器 V7
 
 Windows 10/11 x64 离线单文件程序，无需 AutoCAD、Python 或联网运行。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v6.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v6.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v6.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v7.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v7.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v7.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V6 界面](releases/preview-v6.png)
+![V7 界面](releases/preview-v7.png)
 
 ## 本次更新
 
-- 所有注释连接改为实际线条和填充箭头，保留注释文字，解决原生引线注释的显示问题。
-- 垫板焊接符号只标左侧；箭头直线连接圆圈端，再向右连接水平基准线。
-- 50 mm 缺口尺寸移到外筋板外侧，修正斜向文字偏移，避免压线；实际测量端点不变。
-- 鞍座内半径使用 CAD 原生折弯半径标注，显示实际 R 值。
-- 长圆孔放大图移近滑动鞍座，并给孔距标注留出空间。
-- 保留原生公差、真实尺寸换算、螺栓下拉选择、黑白预览及完全离线的矢量 PDF 导出。
+腹板在侧面时，下方投影视图中的腹板两端止于外侧筋板内表面，不再延伸到底板边缘。腹板轮廓、剖面填充和干涉检查同步使用实际截短范围，固定及滑动鞍座保持镜像一致，随筋板几何参数实时调整。
 
-![黑白图纸与放大图](releases/drawing-v6.png)
+保留之前的普通注释箭头、左侧焊接符号、原生折弯半径、缺口尺寸位置与靠近主图的长圆孔放大图，以及黑白预览和离线 PDF 导出。
+
+![黑白图纸与放大图](releases/drawing-v7.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 

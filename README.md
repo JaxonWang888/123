@@ -1,25 +1,23 @@
-# 鞍座图纸生成器 V7
+# 鞍座图纸生成器 V8
 
 Windows 10/11 x64 离线单文件程序，无需 AutoCAD、Python 或联网运行。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v7.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v7.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v7.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v8.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v8.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v8.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V7 界面](releases/preview-v7.png)
+![V8 界面](releases/preview-v8.png)
 
 ## 本次更新
 
-腹板在侧面时，下方投影视图中的腹板两端止于外侧筋板内表面，不再延伸到底板边缘。腹板轮廓、剖面填充和干涉检查同步使用实际截短范围，固定及滑动鞍座保持镜像一致，随筋板几何参数实时调整。
+将长圆孔放大图的 TYP. 数量注释和粗糙度符号移到右上方，箭头改指孔上侧右端，避开左侧尺寸。保留之前的侧腹板截短、原生折弯半径、焊接符号、注释箭头及离线 PDF 导出。
 
-保留之前的普通注释箭头、左侧焊接符号、原生折弯半径、缺口尺寸位置与靠近主图的长圆孔放大图，以及黑白预览和离线 PDF 导出。
-
-![黑白图纸与放大图](releases/drawing-v7.png)
+![黑白图纸与放大图](releases/drawing-v8.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 

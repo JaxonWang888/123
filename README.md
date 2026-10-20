@@ -1,27 +1,27 @@
-# 鞍座图纸生成器 V16
+# 鞍座图纸生成器 V17
 
 Windows 10/11 x64 离线单文件程序，无需 AutoCAD、Python 或联网运行。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v16.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v16.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v16.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v17.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v17.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v17.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V16 界面](releases/preview-v16.png)
+![V17 界面](releases/preview-v17.png)
 
-## 本次更新：中心对称与标注对齐
+## 本次更新：筒体轮廓与下方断开线
 
-- 左上新增边距标注与鞍座宽度 b 在同一水平线，圆角标注改到右上圆角。
-- 侧置腹板的鞍座总宽度 b 关于中心线对称；同步本体、剖面、遮挡与碰撞校验。
-- 右上 X 与筋板间距 di 标注在同一水平线。
+- 筒体示意轮廓改到垫板上表面及其上方，避免与垫板厚度重合。
+- 下方两个鞍座之间增加一对断开线，与上方断开线对齐，使用“5 断开线（双点划线）”图层。
+- 保留 V16 的总宽度中心对称、标注对齐、右侧圆角和 HM 1-1 尺寸样式。
 
-总宽 b 仍包含腹板厚度。默认 b=280、腹板厚12时，整体外侧为±140、筋板宽268；垫板边距60、底板边距140。请用 V16 重新生成图纸。
+请用 V17 重新生成图纸，已有文件不会自动更新。
 
-![黑白图纸与放大图](releases/drawing-v16.png)
+![黑白图纸与放大图](releases/drawing-v17.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 

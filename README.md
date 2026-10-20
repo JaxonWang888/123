@@ -1,28 +1,25 @@
-# 鞍座图纸生成器 V11
+# 鞍座图纸生成器 V12
 
 Windows 10/11 x64 离线单文件程序，无需 AutoCAD、Python 或联网运行。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v11.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v11.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v11.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v12.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v12.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v12.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V11 界面](releases/preview-v11.png)
+![V12 界面](releases/preview-v12.png)
 
-## 本次更新：排气孔和腹板缺口注释排布
+## 本次更新：缺口注释向左移近鞍座
 
-- 右上角排气孔注释移至内侧偏右空白区域，上移避开垫板弧线和左侧半径标注。
-- 调整中文、直径后缀与英文位置，增加文字间距。
-- 腹板缺口注释移到图形右侧，箭头斜线固定连接注释横线左端。
-- 保留文字样式 HM-ASME、尺寸样式 HM-ASME 1-1 及之前兼容修复。
+腹板缺口注释向左移动，将图形外侧间距由图纸上 24 mm 缩为 7.2 mm。保留图形间隙和箭头连接横线左端，排气孔位置保持上一版排布。
 
-请使用 V11 重新生成新的图纸文件，已有旧文件不会自动更新。
+请使用 V12 重新生成图纸，已有文件不会自动更新。
 
-![黑白图纸与放大图](releases/drawing-v11.png)
+![黑白图纸与放大图](releases/drawing-v12.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 

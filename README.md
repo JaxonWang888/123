@@ -1,23 +1,29 @@
-# 鞍座图纸生成器 V8
+# 鞍座图纸生成器 V9
 
 Windows 10/11 x64 离线单文件程序，无需 AutoCAD、Python 或联网运行。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v8.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v8.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v8.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v9.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v9.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v9.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V8 界面](releases/preview-v8.png)
+![V9 界面](releases/preview-v9.png)
 
-## 本次更新
+## 本次更新：Mechanical 2018 兼容修复
 
-将长圆孔放大图的 TYP. 数量注释和粗糙度符号移到右上方，箭头改指孔上侧右端，避开左侧尺寸。保留之前的侧腹板截短、原生折弯半径、焊接符号、注释箭头及离线 PDF 导出。
+- 修复角度标注弧定位点未写入、重生成后产生巨大扇形的问题。
+- 正确写入用户指定的文字位置、文本中心/旋转及匿名尺寸块标志，避免按自动位置重排。
+- 当前尺寸变量、活动样式和每个尺寸实体同步图纸全局比例；另附 1:25 核验样例。
+- 中文使用 Unicode 转义并明确绑定宋体；英数使用 Arial 常规，补齐 TrueType 字体族和字符集信息。
+- 保留之前的原生尺寸、孔距公差、普通注释箭头、侧腹板截短、放大图和离线 PDF 导出。
 
-![黑白图纸与放大图](releases/drawing-v8.png)
+请使用 V9 重新生成新的 DWG 文件名，并在 Mechanical 2018 中单独打开检查，可执行 REGENALL。已有旧文件不会自动更新。
+
+![黑白图纸与放大图](releases/drawing-v9.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 
@@ -27,8 +33,8 @@ DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此
 
 ## 验证与使用范围
 
-20 组参数模型检查及补充检查通过；Windows EXE 在 Wine 10 中完成 169 项交互/导出检查。21 组 DWG/DXF 生成并回读，均含原生折弯半径实体，42 份文档独立审计错误与修复均为 0。21 份 PDF 经独立解析和渲染检查，确认为黑白矢量、A2 纸张和不同线宽。完整报告在程序包内。
+Windows EXE 在 Wine 10 中完成 177 项交互/导出检查；42 份常规 CAD 文档和 8 份比例文档独立审计错误与修复均为 0。独立重生成角度尺寸恢复为 450/650 mm 弧半径；1:2.5、1:5、1:25、1:40 的实体和样式全局比例均核对一致。25 份 DWG 原始文字流通过 Unicode 与字体检查，21 份 PDF 保持黑白矢量。完整数据和验证报告在程序包内。
 
-尚未在用户 Windows 实机或 AutoCAD 中验证；不承诺旧 AutoCAD 2000 的折弯半径兼容性。默认参数仅作演示，不执行结构强度计算。PDF 文字转为字体轮廓，CAD 文字和标注可编辑。
+当前环境没有 AutoCAD Mechanical 2018，尚未进行该软件的实机打开、重生成、编辑、保存和打印验收。默认参数仅作演示，不执行强度计算。PDF 文字转为字体轮廓，CAD 文字和标注可编辑。
 
 GNU LibreDWG 及程序遵循 GPL-3.0-or-later；许可证和完整对应源码随包提供。历史版本在 releases 目录保留。

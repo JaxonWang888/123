@@ -1,27 +1,28 @@
-# 鞍座图纸生成器 V13
+# 鞍座图纸生成器 V14
 
 Windows 10/11 x64 离线单文件程序，无需 AutoCAD、Python 或联网运行。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v13.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v13.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v13.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v14.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v14.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v14.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V13 界面](releases/preview-v13.png)
+![V14 界面](releases/preview-v14.png)
 
-## 本次更新：长圆孔重生成尺寸修复与 HM 1-1
+## 本次更新：尺寸排布与半径方向
 
-- 全部生成的尺寸及当前尺寸样式改为 HM 1-1，文字样式继续使用 HM-ASME。
-- 长圆孔放大图孔宽、直线段和半径保存实际尺寸文字覆盖，防止重生成后数值随放大倍数增加。
-- 保留原生标注、测量换算和全局比例；修正半径重复 R 前缀。
+- 尺寸线保持连续；文字优先居中在线上方，空间不足时放左侧并延伸尺寸线到文字下方。
+- 文字与尺寸线平行，按实际字宽居中。
+- 长圆孔放大图半径线经过真实圆弧中心，向外延伸至文字下方。
+- 保留 HM 1-1 和长圆孔实际尺寸文字覆盖。
 
-放大图三处尺寸有文字覆盖，直接在 CAD 修改其几何时需同步更新文字；推荐在程序调整孔参数后重新生成。其余普通尺寸继续自动测量。请使用 V13 重新生成图纸，已有文件不会自动更新。
+请使用 V14 重新生成图纸。放大图三处尺寸有文字覆盖，直接在 CAD 改孔形时仍需同步更新文字。
 
-![黑白图纸与放大图](releases/drawing-v13.png)
+![黑白图纸与放大图](releases/drawing-v14.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 

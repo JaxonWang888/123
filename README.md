@@ -1,29 +1,31 @@
-# 鞍座图纸生成器 V12
+# 鞍座图纸生成器 V13
 
 Windows 10/11 x64 离线单文件程序，无需 AutoCAD、Python 或联网运行。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v12.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v12.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v12.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v13.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v13.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v13.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V12 界面](releases/preview-v12.png)
+![V13 界面](releases/preview-v13.png)
 
-## 本次更新：缺口注释向左移近鞍座
+## 本次更新：长圆孔重生成尺寸修复与 HM 1-1
 
-腹板缺口注释向左移动，将图形外侧间距由图纸上 24 mm 缩为 7.2 mm。保留图形间隙和箭头连接横线左端，排气孔位置保持上一版排布。
+- 全部生成的尺寸及当前尺寸样式改为 HM 1-1，文字样式继续使用 HM-ASME。
+- 长圆孔放大图孔宽、直线段和半径保存实际尺寸文字覆盖，防止重生成后数值随放大倍数增加。
+- 保留原生标注、测量换算和全局比例；修正半径重复 R 前缀。
 
-请使用 V12 重新生成图纸，已有文件不会自动更新。
+放大图三处尺寸有文字覆盖，直接在 CAD 修改其几何时需同步更新文字；推荐在程序调整孔参数后重新生成。其余普通尺寸继续自动测量。请使用 V13 重新生成图纸，已有文件不会自动更新。
 
-![黑白图纸与放大图](releases/drawing-v12.png)
+![黑白图纸与放大图](releases/drawing-v13.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 
-主图毫米模型 1:1，所有尺寸为 CAD 原生 DIMENSION / LARGE_RADIAL_DIMENSION，使用 HM-ASME 1-1，图层为“6 尺寸线-管口号外圆（细实线）”，全局比例等于图纸比例。仅长圆孔的放大复制图采用标示放大比例，标注仍显示孔的实际尺寸。中文宋体，英文数字 Arial。
+主图毫米模型 1:1，所有尺寸为 CAD 原生 DIMENSION / LARGE_RADIAL_DIMENSION，使用 HM 1-1，图层为“6 尺寸线-管口号外圆（细实线）”，全局比例等于图纸比例。仅长圆孔的放大复制图采用标示放大比例，标注仍显示孔的实际尺寸。中文宋体，英文数字 Arial。
 
 保留之前的外筋板接触点、截平端面、实际投影、镜像侧腹板、对称孔、独立内筋板间距、非交叠原生剖面、自动比例具体值和滚动重绘。仍不生成 Note、BOM、泡泡号、Ls、向视符号及过程角度；排气孔、缺口、地脚孔注释和焊接符号保留，注释连接使用普通箭头和线条。
 

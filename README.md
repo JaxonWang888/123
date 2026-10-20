@@ -1,27 +1,25 @@
-# 鞍座图纸生成器 V17
+# 鞍座图纸生成器 V18
 
 Windows 10/11 x64 离线单文件程序，无需 AutoCAD、Python 或联网运行。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v17.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v17.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v17.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v18.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v18.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v18.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V17 界面](releases/preview-v17.png)
+![V18 界面](releases/preview-v18.png)
 
-## 本次更新：筒体轮廓与下方断开线
+## 本次更新：缩短下方断开线
 
-- 筒体示意轮廓改到垫板上表面及其上方，避免与垫板厚度重合。
-- 下方两个鞍座之间增加一对断开线，与上方断开线对齐，使用“5 断开线（双点划线）”图层。
-- 保留 V16 的总宽度中心对称、标注对齐、右侧圆角和 HM 1-1 尺寸样式。
+下方每条断开线上下端点跨度改为底板长度的0.2倍，仍居中放置，与上方断开线对齐，保持“5 断开线（双点划线）”图层。
 
-请用 V17 重新生成图纸，已有文件不会自动更新。
+例如底板长1800时，跨度为360 mm。请用 V18 重新生成图纸。
 
-![黑白图纸与放大图](releases/drawing-v17.png)
+![黑白图纸与放大图](releases/drawing-v18.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 

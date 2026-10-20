@@ -1,29 +1,28 @@
-# 鞍座图纸生成器 V9
+# 鞍座图纸生成器 V10
 
 Windows 10/11 x64 离线单文件程序，无需 AutoCAD、Python 或联网运行。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v9.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v9.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v9.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v10.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v10.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v10.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V9 界面](releases/preview-v9.png)
+![V10 界面](releases/preview-v10.png)
 
-## 本次更新：Mechanical 2018 兼容修复
+## 本次更新：文字样式统一为 HM-ASME
 
-- 修复角度标注弧定位点未写入、重生成后产生巨大扇形的问题。
-- 正确写入用户指定的文字位置、文本中心/旋转及匿名尺寸块标志，避免按自动位置重排。
-- 当前尺寸变量、活动样式和每个尺寸实体同步图纸全局比例；另附 1:25 核验样例。
-- 中文使用 Unicode 转义并明确绑定宋体；英数使用 Arial 常规，补齐 TrueType 字体族和字符集信息。
-- 保留之前的原生尺寸、孔距公差、普通注释箭头、侧腹板截短、放大图和离线 PDF 导出。
+- 所有 CAD 文字及尺寸显示块文字使用 HM-ASME，当前文字样式也设为 HM-ASME。
+- HM-ASME 保持 Arial 常规体；中文单行文字通过 MTEXT 内部字体格式指定宋体，保持可编辑与中文显示。
+- 尺寸样式继续使用 HM-ASME 1-1，全局比例随图纸比例同步。
+- 保留之前角度尺寸定位、文字位置和 Unicode 编码修复。
 
-请使用 V9 重新生成新的 DWG 文件名，并在 Mechanical 2018 中单独打开检查，可执行 REGENALL。已有旧文件不会自动更新。
+请使用 V10 重新生成新的 DWG/DXF 文件，已有旧文件不会自动更新。
 
-![黑白图纸与放大图](releases/drawing-v9.png)
+![黑白图纸与放大图](releases/drawing-v10.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 

@@ -1,28 +1,28 @@
-# 鞍座图纸生成器 V10
+# 鞍座图纸生成器 V11
 
 Windows 10/11 x64 离线单文件程序，无需 AutoCAD、Python 或联网运行。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v10.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v10.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v10.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v11.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v11.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v11.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V10 界面](releases/preview-v10.png)
+![V11 界面](releases/preview-v11.png)
 
-## 本次更新：文字样式统一为 HM-ASME
+## 本次更新：排气孔和腹板缺口注释排布
 
-- 所有 CAD 文字及尺寸显示块文字使用 HM-ASME，当前文字样式也设为 HM-ASME。
-- HM-ASME 保持 Arial 常规体；中文单行文字通过 MTEXT 内部字体格式指定宋体，保持可编辑与中文显示。
-- 尺寸样式继续使用 HM-ASME 1-1，全局比例随图纸比例同步。
-- 保留之前角度尺寸定位、文字位置和 Unicode 编码修复。
+- 右上角排气孔注释移至内侧偏右空白区域，上移避开垫板弧线和左侧半径标注。
+- 调整中文、直径后缀与英文位置，增加文字间距。
+- 腹板缺口注释移到图形右侧，箭头斜线固定连接注释横线左端。
+- 保留文字样式 HM-ASME、尺寸样式 HM-ASME 1-1 及之前兼容修复。
 
-请使用 V10 重新生成新的 DWG/DXF 文件，已有旧文件不会自动更新。
+请使用 V11 重新生成新的图纸文件，已有旧文件不会自动更新。
 
-![黑白图纸与放大图](releases/drawing-v10.png)
+![黑白图纸与放大图](releases/drawing-v11.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 

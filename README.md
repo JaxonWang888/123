@@ -1,23 +1,24 @@
-# 鞍座图纸生成器 V22
+# 鞍座图纸生成器 V23
 
 Windows 10/11 x64 单文件程序。基础生成可离线运行；新增导出后自动整理需要本机 AutoCAD Mechanical 2018 / AutoCAD 2018。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v22.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v22.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v22.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v23.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v23.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v23.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V22 界面](releases/preview-v22.png)
+![V23 界面](releases/preview-v23.png)
 
-## 本次更新：中置腹板左侧宽度距离尺寸
+## 本次更新：接地板与独立详图
 
-腹板在中间时，新增Wp左边缘到b左边缘的尺寸，与b尺寸位于同一水平线。默认值为(400－280)/2＝60 mm。侧置腹板已有尺寸保留。
-
-V21剖视、单面焊与视图排布，以及设备距离、参考值、方位标识和参数文件V7继续保留。
+- 每鞍座一块接地板，安装于最外侧内筋板；没有内筋板时使用外筋板。固定鞍座向右伸出，滑动鞍座向左伸出，中置/侧置腹板均适用。
+- 孔中心到底板底面100 mm，厚度中心与筋板对齐。各投影视图增加轮廓、孔、箭头注释、厚度和安装高度。
+- 七个尺寸可输入，默认50×70×6、孔Ø12、孔距上边17、距自由端23、圆角R10；详图比例独立输入，默认1:2。
+- 接地板详图标实际尺寸，保留焊脚4、焊接圆圈、补充虚线、TYP.及粗糙度12.5。参数文件升级V8并兼容旧文件。
 
 ## 保留：DWG 自动打开与标注整理
 
@@ -31,7 +32,7 @@ V21剖视、单面焊与视图排布，以及设备距离、参考值、方位�
 
 已测试Windows COM模拟、已知标准窗口按钮处理、基础导出和无CAD时的真实子进程失败路径；**尚未在真实Mechanical2018中验收COM连接、现代提示、修复和保存全过程**。需要2018已完成首次启动，生成器与CAD使用相同运行权限。
 
-![黑白图纸与放大图](releases/drawing-v22.png)
+![黑白图纸与放大图](releases/drawing-v23.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 
@@ -41,7 +42,7 @@ DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此
 
 ## 验证与使用范围（基础导出）
 
-Windows EXE 在 Wine 10 中完成 189 项交互/导出检查；42 份常规 CAD 文档和 8 份比例文档独立审计错误与修复均为 0。独立重生成角度尺寸恢复为 450/650 mm 弧半径；1:2.5、1:5、1:25、1:40 的实体和样式全局比例均核对一致。25 份 DWG 原始文字流通过 Unicode 与字体检查，21 份 PDF 保持黑白矢量。完整数据和验证报告在程序包内。
+Windows EXE 在 Wine 10 中完成 213 项交互/导出检查；42 份常规 CAD 文档和 8 份比例文档独立审计错误与修复均为 0。独立重生成角度尺寸恢复为 450/650 mm 弧半径；1:2.5、1:5、1:25、1:40 的实体和样式全局比例均核对一致。25 份 DWG 原始文字流通过 Unicode 与字体检查，21 份 PDF 保持黑白矢量。完整数据和验证报告在程序包内。
 
 当前环境没有 AutoCAD Mechanical 2018，尚未进行该软件的实机打开、重生成、编辑、保存和打印验收。默认参数仅作演示，不执行强度计算。PDF 文字转为字体轮廓，CAD 文字和标注可编辑。
 

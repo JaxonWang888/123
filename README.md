@@ -1,21 +1,21 @@
-# 鞍座图纸生成器 V25
+# 鞍座图纸生成器 V26
 
 Windows 10/11 x64 单文件程序。基础生成可离线运行；新增导出后自动整理需要本机 AutoCAD Mechanical 2018 / AutoCAD 2018。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v25.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v25.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v25.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v26.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v26.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v26.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V25 界面](releases/preview-v25.png)
+![V26 界面](releases/preview-v26.png)
 
-## 本次更新：接地孔粗糙度位置
+## 本次更新：粗糙度符号与文字旋转
 
-接地板详图中，孔的粗糙度12.5移到原生直径尺寸线上，符号顶点与尺寸线外端相接，并避开孔径文字。详图比例改变后随尺寸线同步定位。V24其他接地板标注与参数文件V8保留。
+接地板详图中，粗糙度符号及12.5文字一起旋转，与孔的直径尺寸线平行，并保持符号与尺寸线外端相接。其他参数和功能保留。
 
 ## 保留：DWG 自动打开与标注整理
 
@@ -29,7 +29,7 @@ Windows 10/11 x64 单文件程序。基础生成可离线运行；新增导出�
 
 已测试Windows COM模拟、已知标准窗口按钮处理、基础导出和无CAD时的真实子进程失败路径；**尚未在真实Mechanical2018中验收COM连接、现代提示、修复和保存全过程**。需要2018已完成首次启动，生成器与CAD使用相同运行权限。
 
-![黑白图纸与放大图](releases/drawing-v25.png)
+![黑白图纸与放大图](releases/drawing-v26.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 

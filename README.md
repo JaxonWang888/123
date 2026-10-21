@@ -1,24 +1,26 @@
-# 鞍座图纸生成器 V23
+# 鞍座图纸生成器 V24
 
 Windows 10/11 x64 单文件程序。基础生成可离线运行；新增导出后自动整理需要本机 AutoCAD Mechanical 2018 / AutoCAD 2018。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v23.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v23.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v23.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v24.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v24.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v24.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V23 界面](releases/preview-v23.png)
+![V24 界面](releases/preview-v24.png)
 
-## 本次更新：接地板与独立详图
+## 本次更新：接地板标注修正
 
-- 每鞍座一块接地板，安装于最外侧内筋板；没有内筋板时使用外筋板。固定鞍座向右伸出，滑动鞍座向左伸出，中置/侧置腹板均适用。
-- 孔中心到底板底面100 mm，厚度中心与筋板对齐。各投影视图增加轮廓、孔、箭头注释、厚度和安装高度。
-- 七个尺寸可输入，默认50×70×6、孔Ø12、孔距上边17、距自由端23、圆角R10；详图比例独立输入，默认1:2。
-- 接地板详图标实际尺寸，保留焊脚4、焊接圆圈、补充虚线、TYP.及粗糙度12.5。参数文件升级V8并兼容旧文件。
+- 右上视图只显示左侧接地板。
+- 左下视图标接地板与筋板边缘间隙，默认3 mm，在另一侧增加厚度符号。
+- 右侧鞍座的接地板注释连接横线右端。
+- 详图孔径改为原生直径尺寸，按详图比例显示实际孔径。
+
+接地板参数、100 mm孔高、详图比例和参数文件V8继续保留。
 
 ## 保留：DWG 自动打开与标注整理
 
@@ -32,7 +34,7 @@ Windows 10/11 x64 单文件程序。基础生成可离线运行；新增导出�
 
 已测试Windows COM模拟、已知标准窗口按钮处理、基础导出和无CAD时的真实子进程失败路径；**尚未在真实Mechanical2018中验收COM连接、现代提示、修复和保存全过程**。需要2018已完成首次启动，生成器与CAD使用相同运行权限。
 
-![黑白图纸与放大图](releases/drawing-v23.png)
+![黑白图纸与放大图](releases/drawing-v24.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 

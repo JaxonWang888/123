@@ -1,25 +1,26 @@
-# 鞍座图纸生成器 V20
+# 鞍座图纸生成器 V21
 
 Windows 10/11 x64 单文件程序。基础生成可离线运行；新增导出后自动整理需要本机 AutoCAD Mechanical 2018 / AutoCAD 2018。
 
 ## 下载
 
-- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v20.exe)**
-- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v20.zip)
-- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v20.zip)
+- **[单文件 EXE，直接下载运行](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-generator-v21.exe)**
+- [完整程序包：说明、示例 DWG/DXF/PDF、参数和验证报告](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-offline-v21.zip)
+- [完整对应源码和构建脚本](https://github.com/JaxonWang888/123/raw/refs/heads/main/releases/saddle-source-v21.zip)
 - [SHA-256 校验值](releases/SHA256SUMS.txt)
 
 将 EXE 放入 `C:\Users\20202012\Desktop\鞍座自动生成` 后双击运行。说明、示例与源码不是运行依赖。
 
-![V20 界面](releases/preview-v20.png)
+![V21 界面](releases/preview-v21.png)
 
-## 本次更新：设备距离、剖视与筋板焊接
+## 本次更新：剖视符号、焊接符号及视图排布
 
-- 新增“鞍座到基准线的距离”“鞍座之间的距离”“外侧筋板与鞍座垫板焊脚”。
-- 到基准线参考值＝输入距离－Wp/2；上方参考间距和下方底板中心间距均显示输入鞍座间距，断开示意图的绘制间距不变。明确的尺寸文字覆盖会在自动整理时保留。
-- 增加A/B剖视箭头、A-A/B-B视图标题及图纸比例，以及270°、90°、180°方位标识。
-- 外侧筋板与垫板增加TYP.双面焊及弧形轮廓，焊脚用户输入，不保留1.0tmin。
-- 参数文件升级V7，兼容旧参数文件；旧文件的新参数使用演示默认值，出图前请核对。
+- 剖视短线：上向下、下向上、左向右、右向左，按最后确认的方向绘制。
+- 右上A-A名称及比例上移，避开线条。
+- 筋板/垫板焊接箭头指向真实接触点，改为单面焊，删除下方数值和三角形；下方圆弧两端与虚线相接。
+- B-B名称及比例移至固定/滑动鞍座文字下方，左下图形及关联尺寸、放大图整体下移，保证在B-B名称下方。
+
+设备距离参数、Wp/2参考值、方位标识和参数文件V7继续保留。
 
 ## 保留：DWG 自动打开与标注整理
 
@@ -33,7 +34,7 @@ Windows 10/11 x64 单文件程序。基础生成可离线运行；新增导出�
 
 已测试Windows COM模拟、已知标准窗口按钮处理、基础导出和无CAD时的真实子进程失败路径；**尚未在真实Mechanical2018中验收COM连接、现代提示、修复和保存全过程**。需要2018已完成首次启动，生成器与CAD使用相同运行权限。
 
-![黑白图纸与放大图](releases/drawing-v20.png)
+![黑白图纸与放大图](releases/drawing-v21.png)
 
 DXF 为 2004 格式；DWG 含原生折弯半径扩展实体，请使用支持此标注类型的 CAD。
 

@@ -1,0 +1,44 @@
+--- a/src/app.cpp
++++ b/src/app.cpp
+@@ -94,7 +94,7 @@
+ #include "smoke.inc"
+ LRESULT CALLBACK MainProc(HWND h,UINT m,WPARAM w,LPARAM l){switch(m){case WM_CREATE:{mainWnd=h;
+  control(h,L"STATIC",L"鞍座图纸生成器",SS_LEFT,18,12,300,30,1);SendMessageW(GetDlgItem(h,1),WM_SETFONT,(WPARAM)titleFont,TRUE);
+- control(h,L"STATIC",L"离线独立版  /  原生标注版 V35  /  默认值仅供演示",SS_LEFT,18,46,460,22,2);
++ control(h,L"STATIC",L"离线独立版  /  原生标注版 V36  /  默认值仅供演示",SS_LEFT,18,46,460,22,2);
+  control(h,L"BUTTON",L"导出 DWG",BS_PUSHBUTTON,490,17,108,34,501);control(h,L"BUTTON",L"导出 DXF",BS_PUSHBUTTON,608,17,108,34,502);control(h,L"BUTTON",L"适应窗口",BS_PUSHBUTTON,726,17,98,34,503);control(h,L"BUTTON",L"保存参数",BS_PUSHBUTTON,834,17,98,34,504);control(h,L"BUTTON",L"载入参数",BS_PUSHBUTTON,942,17,98,34,505);control(h,L"BUTTON",L"说明",BS_PUSHBUTTON,1050,17,70,34,506);control(h,L"BUTTON",L"导出 PDF",BS_PUSHBUTTON,1130,17,100,34,508);
+  panel=CreateWindowExW(0,L"SaddlePanel",L"",WS_CHILD|WS_VISIBLE|WS_VSCROLL|WS_CLIPCHILDREN,0,0,0,0,h,nullptr,inst,nullptr);
+  canvas=CreateWindowExW(0,L"SaddleCanvas",L"",WS_CHILD|WS_VISIBLE,0,0,0,0,h,nullptr,inst,nullptr);
+--- a/src/native_model.hpp
++++ b/src/native_model.hpp
+@@ -249,11 +249,19 @@
+  Point outerDir=outer.direction,innerFace={frontX+outer.base[0].x,frontY+outer.base[0].y},innerContact={frontX+outer.contact.x,frontY+outer.contact.y},fromCentre=innerFace-c;
+  double projection=dot(fromCentre,outerDir);Point radial=unit(innerContact-c),tangent=normal(radial);
+  d.deg3=acos(std::clamp(std::abs(dot(outerDir,tangent)),0.,1.))*180/PI;d.webNotched=d.deg3<20;
++ std::vector<double> dimensionedInnerRibHeights;
+  for(size_t i=0;i<ribs.size();i++){
+   auto&r=ribs[i];for(int edge=0;edge<2;edge++)line(r.base[edge]+Point{frontX,frontY},r.top[edge]+Point{frontX,frontY},visible,2);
+   line(r.top[0]+Point{frontX,frontY},r.top[1]+Point{frontX,frontY},visible,15);
+   Point middle=(r.base[0]+r.base[1])*.5+r.direction*((r.top[0].y-p.base)*.3/r.direction.y)+Point{frontX,frontY},perp=normal(r.direction);
+-  if(i==0||i==ribs.size()/2)dim("tw",1,middle-perp*(p.rib/2),middle+perp*(p.rib/2),middle+perp*offset);
++  // Match BOM length grouping: one representative of every inner rib height,
++  // selected on the right half to retain the original centre-rib annotation.
++  bool thicknessLabel=i==0;
++  if(i>=ribs.size()/2&&i+1<ribs.size()){
++   bool seen=false;for(double h:dimensionedInnerRibHeights)if(fabs(h-r.top[0].y)<1e-7){seen=true;break;}
++   if(!seen){dimensionedInnerRibHeights.push_back(r.top[0].y);thicknessLabel=true;}
++  }
++  if(thicknessLabel)dim("tw",1,middle-perp*(p.rib/2),middle+perp*(p.rib/2),middle+perp*offset);
+  }
+  // Web profile: the 50 mm end relief follows a radius through the vessel centre.
+  double endRadius=d.webNotched?ro+50:ro;
+--- a/src/render.inc
++++ b/src/render.inc
+@@ -21,6 +21,6 @@
+   }
+  }
+  SelectObject(dc,oldPen);SelectObject(dc,oldBrush);for(auto&x:pens)DeleteObject(x.second);for(auto&x:fonts)DeleteObject(x.second);
+- auto of=SelectObject(dc,uiFont);SetTextColor(dc,RGB(71,85,105));RECT tip={U(16),U(12),r.right-U(16),U(40)};DrawTextW(dc,L"原生标注 V35 · 滚轮缩放 · 左键拖动 · 双击适应",-1,&tip,DT_SINGLELINE|DT_RIGHT);
++ auto of=SelectObject(dc,uiFont);SetTextColor(dc,RGB(71,85,105));RECT tip={U(16),U(12),r.right-U(16),U(40)};DrawTextW(dc,L"原生标注 V36 · 滚轮缩放 · 左键拖动 · 双击适应",-1,&tip,DT_SINGLELINE|DT_RIGHT);
+  if(!valid){RECT box={U(20),r.bottom-U(95),r.right-U(20),r.bottom-U(20)};HBRUSH b=CreateSolidBrush(RGB(255,237,213));FillRect(dc,&box,b);DeleteObject(b);SetTextColor(dc,RGB(154,52,18));box.left+=U(12);box.top+=U(8);std::wstring w=L"参数无效，保留上一次有效预览；导出已禁用。\n"+errorText;DrawTextW(dc,w.c_str(),-1,&box,DT_WORDBREAK);}SelectObject(dc,of);
+ }

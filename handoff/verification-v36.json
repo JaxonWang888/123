@@ -1,0 +1,23 @@
+{
+  "version": "V36",
+  "baseline": "V35",
+  "status": "pending_real_mechanical_2018_acceptance",
+  "exe_sha256": "5c25a8f324763a8faa1001cbb2e4c0f4b1c1b069b0748220d61c2f4cd33d4ea0",
+  "template_sha256": "22f07a73c85e7bef22d5aab5d3397b2d1c54b24023a6e68afc063bb835f4da5c",
+  "embedded_template_bytes_match": true,
+  "cross_build": "passed",
+  "executed_host_tests": {
+    "model": 20,
+    "bom": 18,
+    "earth": 24,
+    "layout_and_dimension_job": 25,
+    "rib_thickness_group_coverage": 28
+  },
+  "windows_tests": "not_rerun_no_automation_changes",
+  "final_exe_self_test": "not_run",
+  "real_mechanical_2018": "not_available",
+  "original_bom_protocol": "unchanged",
+  "new_sidecar": ".标注数据",
+  "tolerance_restoration": "authoritative_generated_dimensions_after_style_and_position_regeneration",
+  "matching": "entget_DXF13_14_by_validated_handle_unique_endpoints_and_count"
+}

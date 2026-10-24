@@ -1,0 +1,10 @@
+{
+  "version": "V36",
+  "confirmation_date": "2026-10-24",
+  "source": "user_confirmation_in_current_conversation",
+  "user_statement": "真实 Mechanical 2018 已验收无问题，将最新版上传至仓库",
+  "real_mechanical_2018": "passed_as_confirmed_by_user",
+  "developer_reran_real_cad_tests": false,
+  "artifacts": "original_uploaded_V36_files_unchanged",
+  "scope": "publish_latest_V36_to_existing_repository"
+}
